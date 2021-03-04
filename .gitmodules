@@ -1,0 +1,6 @@
+[submodule "fe-chall1"]
+	path = fe-chall1
+	url = https://github.com/liocuponeria/fe-chall1.git
+[submodule "teste-front-end"]
+	path = teste-front-end
+	url = https://github.com/caioreisalvarenga/fe-chall1.git
