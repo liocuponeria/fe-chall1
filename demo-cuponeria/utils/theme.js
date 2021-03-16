@@ -9,6 +9,9 @@ export default {
       button: '#619CEB',
     },
   },
+  colors: {
+    yellow: '#FAD424',
+  },
 
   SIZE: {
     tablet: 768,

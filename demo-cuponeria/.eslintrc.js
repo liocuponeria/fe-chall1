@@ -19,6 +19,7 @@ module.exports = {
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
     indent: ['error', 2],
     'import/prefer-default-export': 'off',
+    'react/forbid-prop-types': 'off',
     // quotes: "off",
   },
 };
