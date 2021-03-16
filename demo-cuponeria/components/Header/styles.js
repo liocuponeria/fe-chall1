@@ -13,4 +13,10 @@ display:flex;
 export const Title = styled.h1`
   color: white;
   margin: auto;
+  padding-right: 64px;
+`;
+
+export const Center = styled.div`
+display:flex;
+justify-content: center;
 `;

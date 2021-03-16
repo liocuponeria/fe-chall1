@@ -17,5 +17,11 @@ export const Subtitle = styled.div`
 
 export const DiscoverList = styled.div`
   display:flex;
-    justify-content: space-evenly;
+  justify-content: space-evenly;
+`;
+
+export const FeaturedList = styled.div`
+  display:flex;
+  overflow-x: scroll;
+  justify-content: space-evenly;
 `;
