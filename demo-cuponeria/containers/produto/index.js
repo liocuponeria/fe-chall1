@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import Link from 'next/link';
 import { ThemeContext } from 'styled-components';
 import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';

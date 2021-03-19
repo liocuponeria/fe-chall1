@@ -6,7 +6,7 @@
     "dev": "next dev -p 30001",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint components pages"
+    "lint": "eslint components pages containers"
   },
   "dependencies": {
     "next": "10.0.8",
