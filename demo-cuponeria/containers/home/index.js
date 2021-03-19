@@ -5,9 +5,11 @@ import ProductCard from '../../components/ProductCard';
 import * as styles from './styles';
 import FeaturedCard from '../../components/FeaturedCard';
 import ButtonList from './ButtonList';
+import { useIsMobile } from '../../utils/hooks/isMobile';
 
 // TODO: melhorar a estrutura desse componente (tá meio gambiarra)
 export default function Home() {
+  const isMobile = useIsMobile();
   const [category, setCategory] = useState('');
   const [products, setProducts] = useState({
     discover: [],
@@ -15,11 +17,15 @@ export default function Home() {
   });
 
   const getProducts = useCallback(async () => {
-    const url = category ? `https://fakestoreapi.com/products/category/${category}` : 'https://fakestoreapi.com/products';
+    const url = process.env.NEXT_PUBLIC_URL + (category && `/category/${category}`);
     const response = await fetch(url);
-    const produtosJson = await response.json();
+    let produtosJson = await response.json();
 
     if (!produtosJson) return;
+
+    // Preciso alterar a url até a alteração de DNS da api surgir efeito
+    // https://github.com/keikaavousi/fake-store-api/issues/8
+    produtosJson = produtosJson.map((item) => ({ ...item, image: item.image.replace('fakestoreapi', 'fakestoreapi.herokuapp') }));
 
     const produtos = {
       discover: produtosJson.splice(0, 2),
@@ -37,7 +43,7 @@ export default function Home() {
   };
 
   return (
-    <div>
+    <styles.Container>
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
@@ -45,9 +51,9 @@ export default function Home() {
       <Header>
         <ButtonList currentCategory={category} onClick={onClickHeader} />
       </Header>
-      <div style={{ margin: '50px', backgroundColor: '#F3F2EE' }}>
-        <styles.Subtitle>Discover</styles.Subtitle>
-        <styles.DiscoverList>
+      <styles.Wrapper isMobile={isMobile}>
+        <styles.GridContainer>
+          <styles.Subtitle isMobile={isMobile}>Discover</styles.Subtitle>
           {products.discover.map((item, index) => (
             <ProductCard
               product={item}
@@ -55,18 +61,20 @@ export default function Home() {
               color={index % 2 ? 'secondary' : 'primary'}
             />
           ))}
-        </styles.DiscoverList>
-        <styles.Subtitle>Featured</styles.Subtitle>
-        <styles.FeaturedList>
-          {products.features.map((item, index) => (
-            <FeaturedCard
-              product={item}
-              key={item.title}
-              color={index % 2 ? 'secondary' : 'primary'}
-            />
-          ))}
-        </styles.FeaturedList>
-      </div>
-    </div>
+        </styles.GridContainer>
+        <styles.GridContainer>
+          <styles.Subtitle>Featured</styles.Subtitle>
+          <styles.FeaturedList>
+            {products.features.map((item, index) => (
+              <FeaturedCard
+                product={item}
+                key={item.title}
+                color={index % 2 ? 'secondary' : 'primary'}
+              />
+            ))}
+          </styles.FeaturedList>
+        </styles.GridContainer>
+      </styles.Wrapper>
+    </styles.Container>
   );
 }

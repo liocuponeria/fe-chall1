@@ -6,8 +6,7 @@ export const useWindowSize = () => {
   if (typeof window !== 'undefined') {
     useLayoutEffect(() => {
       function updateSize() {
-        const height = window.innerHeight;
-        const width = window.innerWidth;
+        const { height, width } = window.screen;
         setSize([width, height]);
       }
       window.addEventListener('resize', updateSize);

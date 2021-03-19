@@ -14,7 +14,6 @@ export default {
   },
 
   SIZE: {
-    tablet: 768,
-    desktop: 1278,
+    desktop: 768,
   },
 };

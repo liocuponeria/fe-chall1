@@ -1,27 +1,40 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  padding: 10px;
-  display:flex;
-  width: ${({ isMobile }) => (isMobile ? '360px' : '660px')};
-  background: ${({ theme, color }) => theme.productCard[color].background};
-  box-shadow: 1px 1px 10px 0px rgb(0 0 0 / 50%);
-  border-radius: 20px;
-  height: 150px;
+`;
+
+export const GridContainer = styled.div`
+  display:grid;
+  grid-gap: 1rem 20px;
+  max-width:1050px;
+  margin: 0 auto;
 `;
 
 export const Subtitle = styled.div`
   font-weight: bold;
   font-size: 35px;
+  grid-column-start: 1;
+  grid-column-end: ${({ isMobile }) => (isMobile ? 2 : 3)};
 `;
 
 export const DiscoverList = styled.div`
-  display:flex;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+`;
+
+export const Wrapper = styled.div`
+margin:${({ isMobile }) => (isMobile ? '10px' : '10px 50px')};
 `;
 
 export const FeaturedList = styled.div`
-  display:flex;
-  overflow-x: scroll;
-  justify-content: space-evenly;
+  display: grid;
+  grid-auto-flow: column;
+  overflow-x: auto; 
+    grid-column-start: 1;
+    grid-column-end: 3;
+  /* width: calc(100% + 70px); */
+    grid-gap: 10px;
+  & > div {
+    justify-self: center;
+  }
 `;

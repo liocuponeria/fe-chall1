@@ -8,6 +8,7 @@ function Header({ children }) {
     <styled.Container>
       <styled.Row>
         <Image
+          layout="fixed"
           src="/images/logo_cuponeria.png"
           height={64}
           width={64}
@@ -16,7 +17,9 @@ function Header({ children }) {
         <styled.Title>CUPONERIA STORE</styled.Title>
       </styled.Row>
       <styled.Center>
-        {children}
+        <styled.Scroll>
+          {children}
+        </styled.Scroll>
       </styled.Center>
     </styled.Container>
   );

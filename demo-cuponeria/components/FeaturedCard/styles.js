@@ -6,7 +6,6 @@ height: 366px;
 border-radius:10px;
 background-color:white;
 box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.110058);
-margin-right:10px;
 position:relative;
 
 `;

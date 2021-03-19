@@ -1,43 +1,53 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { ThemeContext } from 'styled-components';
+import { useRouter } from 'next/router';
 import { useIsMobile } from '../../utils/hooks/isMobile';
 import * as styled from './styles';
 import Button from '../Button';
+import { formatMoney } from '../../utils/helpers';
 
-function ProductCard({ product, color }) {
+function ProductCard({ product, color, large }) {
   const themeContext = useContext(ThemeContext);
+  const router = useRouter();
   const isMobile = useIsMobile();
   const {
     title,
     description,
     image,
+    id,
   } = product;
   const buttonBg = themeContext.productCard[color].button;
 
+  const onClick = () => !large && router.push(`produto/${id}`);
+
   return (
-    <styled.Container color={color}>
+    <styled.Container isMobile={isMobile} color={color} large={large}>
       <styled.Column style={{
-        paddingRight: '50px',
+        paddingRight: '20px',
         flexGrow: 0,
       }}
       >
         <styled.Image
+          isMobile={isMobile}
+          large={large}
           src={image}
           alt={title}
         />
       </styled.Column>
-      <styled.Column>
-        <styled.Row>
-          <styled.Title>{title}</styled.Title>
-          <Button bgColor={buttonBg}>
-            comprar
+      <styled.RightSide>
+        <styled.RightSideInfo isMobile={isMobile} large={large}>
+          <styled.Title isMobile={isMobile} large={large}>{title}</styled.Title>
+          <Button
+            style={{ whiteSpace: 'nowrap' }}
+            onClick={onClick}
+            bgColor={buttonBg}
+          >
+            {large ? formatMoney(product.price) : 'comprar'}
           </Button>
-        </styled.Row>
-        <styled.Row style={{ overflow: 'hidden' }}>
-          <styled.Description>{description}</styled.Description>
-        </styled.Row>
-      </styled.Column>
+        </styled.RightSideInfo>
+        <styled.Description isMobile={isMobile} large={large}>{description}</styled.Description>
+      </styled.RightSide>
     </styled.Container>
   );
 }
@@ -54,6 +64,7 @@ ProductCard.propTypes = {
     image: PropTypes.string,
   }),
   color: PropTypes.oneOf(['primary', 'secondary']),
+  large: PropTypes.bool,
 };
 
 ProductCard.defaultProps = {
@@ -66,4 +77,5 @@ ProductCard.defaultProps = {
     category: '',
     image: '',
   },
+  large: false,
 };

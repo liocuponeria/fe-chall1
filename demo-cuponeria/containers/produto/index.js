@@ -14,7 +14,7 @@ export default function ProductPage({ product }) {
   const router = useRouter();
 
   return (
-    <div>
+    <styled.Container>
       <Header>
         <Button onClick={() => router.push('/')} textColor="black" bgColor={themeContext.colors.yellow}>
           <styled.BackButton>
@@ -27,12 +27,12 @@ export default function ProductPage({ product }) {
       <styled.Center>
         <ProductCard product={product} color="secondary" large />
       </styled.Center>
-    </div>
+    </styled.Container>
   );
 }
 
 export async function getServerSideProps({ params }) {
-  const response = await fetch(`https://fakestoreapi.com/products/${params.id}`);
+  const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/${params.id}`);
   const data = await response.json();
 
   if (!data) {
@@ -45,7 +45,7 @@ export async function getServerSideProps({ params }) {
   }
 
   return {
-    props: { product: data },
+    props: { product: { ...data, image: data.image.replace('fakestoreapi', 'fakestoreapi.herokuapp') } },
   };
 }
 
