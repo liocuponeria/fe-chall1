@@ -16,11 +16,12 @@ After you're done, push to the origin and send a pull request of the branch with
 
 ## Skills Required
 
-- You have to use [React Js](https://pt-br.reactjs.org/)	as your framework.
+- You have to use [React Js](https://pt-br.reactjs.org/) as your framework.
 - The Product Cards, Featured Cards and Menu Itens must be Reusable Components.
 - You have to use Grid Layout for the structure of the pages.
 - You have to use Flexbox for the Components.
 - All content needs to be consumed through the [Fake Store API](https://fakestoreapi.com/).
+- If the fake store API is out, you can consume [alternative API](https://gist.github.com/FranciscoBBC/7d1d5e370ba397f73c981dc27cd71c3d)
 - The app must be responsive for Web and Mobile but have to look good on all breakpoints like mobile, tablets, laptops, desktops widescreen and desktops ultrawidescreen.
 - Can we see your UI/UX skills? Surprise us with your best, you can change the layout theme schema the way you want, and please, add microinterations but without using external libs.
 - Don't repeat yourself. Elements that are logically related must be changed predictably and uniformly and must be sync.
