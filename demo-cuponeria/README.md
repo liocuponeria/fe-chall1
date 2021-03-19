@@ -1,10 +1,3 @@
-Pesquisar mais sobre:
-Learn about built-in support for code splitting and prefetching
-colocar o logo da cuponeria no ícone da aba
-instalar o styled components e criar um tema para aplicar dark mode
-indentar automaticamente os arquivos de styles
-TODO: Alterar todos os imports dos arquivos de estilos de styles para styled
-
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

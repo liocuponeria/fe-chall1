@@ -32,7 +32,6 @@ export const FeaturedList = styled.div`
   overflow-x: auto; 
     grid-column-start: 1;
     grid-column-end: 3;
-  /* width: calc(100% + 70px); */
     grid-gap: 10px;
   & > div {
     justify-self: center;

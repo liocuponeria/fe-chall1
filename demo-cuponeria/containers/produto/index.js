@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 import Header from '../../components/Header';
 import * as styled from './styles';
 import ProductCard from '../../components/ProductCard';
@@ -14,6 +15,9 @@ export default function ProductPage({ product }) {
 
   return (
     <styled.Container>
+      <Head>
+        <title>Detalhes do produto</title>
+      </Head>
       <Header>
         <Button onClick={() => router.push('/')} textColor="black" bgColor={themeContext.colors.yellow}>
           <styled.BackButton>

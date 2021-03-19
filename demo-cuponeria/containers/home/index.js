@@ -2,12 +2,11 @@ import React, { useCallback, useEffect, useState } from 'react';
 import Head from 'next/head';
 import Header from '../../components/Header';
 import ProductCard from '../../components/ProductCard';
-import * as styles from './styles';
+import * as styled from './styles';
 import FeaturedCard from '../../components/FeaturedCard';
 import ButtonList from './ButtonList';
 import { useIsMobile } from '../../utils/hooks/isMobile';
 
-// TODO: melhorar a estrutura desse componente (tá meio gambiarra)
 export default function Home() {
   const isMobile = useIsMobile();
   const [category, setCategory] = useState('');
@@ -43,17 +42,17 @@ export default function Home() {
   };
 
   return (
-    <styles.Container>
+    <styled.Container>
       <Head>
-        <title>Create Next App</title>
+        <title>Home Cuponeria</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header>
         <ButtonList currentCategory={category} onClick={onClickHeader} />
       </Header>
-      <styles.Wrapper isMobile={isMobile}>
-        <styles.GridContainer>
-          <styles.Subtitle isMobile={isMobile}>Discover</styles.Subtitle>
+      <styled.Wrapper isMobile={isMobile}>
+        <styled.GridContainer>
+          <styled.Subtitle isMobile={isMobile}>Discover</styled.Subtitle>
           {products.discover.map((item, index) => (
             <ProductCard
               product={item}
@@ -61,10 +60,10 @@ export default function Home() {
               color={index % 2 ? 'secondary' : 'primary'}
             />
           ))}
-        </styles.GridContainer>
-        <styles.GridContainer>
-          <styles.Subtitle>Featured</styles.Subtitle>
-          <styles.FeaturedList>
+        </styled.GridContainer>
+        <styled.GridContainer>
+          <styled.Subtitle>Featured</styled.Subtitle>
+          <styled.FeaturedList>
             {products.features.map((item, index) => (
               <FeaturedCard
                 product={item}
@@ -72,9 +71,9 @@ export default function Home() {
                 color={index % 2 ? 'secondary' : 'primary'}
               />
             ))}
-          </styles.FeaturedList>
-        </styles.GridContainer>
-      </styles.Wrapper>
-    </styles.Container>
+          </styled.FeaturedList>
+        </styled.GridContainer>
+      </styled.Wrapper>
+    </styled.Container>
   );
 }
