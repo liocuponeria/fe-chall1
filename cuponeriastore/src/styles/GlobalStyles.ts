@@ -16,6 +16,8 @@ export default createGlobalStyle `
     --color-pink-dark: #EE797E;
     --color-blue: #d9e5e5;
     --color-blue-dark: #619CEB;
+    --color-blue-hover: #428bed;
+    --color-grey: #A8A4A4;
 
     /* BORDERS */
     --primary-border: 7px;
@@ -43,7 +45,6 @@ html, body, #root {
 button {
     outline: 0;
     border-radius: var(--primary-border);
-}
-html {
+    cursor: pointer;
 }
 `;

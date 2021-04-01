@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from '../../assets/logo.svg';
-import { Wrapper, ContainerWrapper, ContainerImg, ContainerTitle, LogoImg, Title, ContainerButtons, ContainerButtonHome, Button } from './styles';
+import { Wrapper, ContainerWrapper, ContainerImg, ContainerTitle, LogoImg, Title, ContainerButtons, Button } from './styles';
 
 const Header: React.FC = () => {
     return (
