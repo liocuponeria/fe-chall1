@@ -1,18 +1,18 @@
 import styled from 'styled-components';
 
-export const DiscoverContainer = styled.div`
+export const DiscoverContainer = styled.div<{ bgContainer: string }>`
     display: grid;
     grid-template-areas: 
     "image image title button button"
     "image image description description description"
     ;
 
-    background-color: rgba(63,127,203, 0.2);
+    background-color: ${props => (props.bgContainer)};
     padding: 2%;
     border-radius: var(--primary-border);
 
-    -webkit-box-shadow: 1px 3px 10px 2px rgba(145,145,145,0.61); 
-    box-shadow: 1px 3px 10px 2px rgba(145,145,145,0.61);
+    -webkit-box-shadow: 1px 3px 10px 2px rgba(145,145,145,0.31); 
+    box-shadow: 1px 3px 10px 2px rgba(145,145,145,0.31);
 
     @media(min-width: 320px) and (max-width: 1300px) {
         grid-template-areas: 
@@ -75,11 +75,11 @@ export const DiscoverTitle = styled.h3`
     }
 `;
 
-export const DiscoverLink = styled.a `
+export const DiscoverLink = styled.a<{ bgButton: string, bgButtonHover: string }> `
     grid-area: button;
     
     height: 50px;
-    background-color: var(--color-blue-dark);
+    background-color: ${props => (props.bgButton)};
     color: var(--color-white);
     display: flex;
     justify-content: center;
@@ -93,7 +93,7 @@ export const DiscoverLink = styled.a `
     transition: background-color .4s;
 
     &:hover {
-        background-color: var(--color-blue-hover);
+        background-color: ${props => (props.bgButtonHover)};
     }
 
     @media(min-width: 320px) and (max-width: 1300px) {
@@ -125,4 +125,3 @@ export const DiscoverDescription = styled.p`
         line-height: 25px;
     }
 `;
-

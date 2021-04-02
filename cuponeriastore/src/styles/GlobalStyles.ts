@@ -12,12 +12,14 @@ export default createGlobalStyle `
     --color-black: #111111;
     --color-white: #ffffff;
     --color-yellow: #FAD424;
+    --color-yellow-hover: #ebc410;
     --color-pink: rgb(244, 228, 228);
     --color-pink-dark: #EE797E;
     --color-blue: #d9e5e5;
     --color-blue-dark: #619CEB;
     --color-blue-hover: #428bed;
     --color-grey: #A8A4A4;
+    --color-red: #FF0000;
 
     /* BORDERS */
     --primary-border: 7px;

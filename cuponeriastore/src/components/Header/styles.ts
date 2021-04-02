@@ -57,7 +57,6 @@ export const ContainerButtons = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
     
     @media (min-width: 320px) and (max-width: 768px) {
         margin-top: 10%;
@@ -81,7 +80,6 @@ export const ContainerButtons = styled.div`
             width: 6.25rem;
             height: 4px;
         }
-
     }
 `;
 
@@ -91,16 +89,10 @@ export const Button = styled.button`
     &:nth-child(1) {
         padding: 15px 30px;
         background-color: var(--color-yellow);
-
-        /* @media (min-width: 320px) and (max-width: 768px) {
-            margin-right: 3.3%;
-            font-size: 10px;
-            padding: 13px 30px;
-            flex-wrap: nowrap;
-            white-space: nowrap;
-            width: auto;
-            margin-bottom: 4%;
-        } */
+        transition: background-color .4s;
+    }
+    &:nth-child(1):hover {
+        background-color: var(--color-yellow-hover);
     }
     padding: 15px 30px;
     background: var(--color-white);
@@ -108,6 +100,10 @@ export const Button = styled.button`
     margin-right: 1.2%;
     font-weight: bold;
     text-transform: uppercase;
+    transition: background-color .4s;
+    &:hover {
+        background-color: var(--color-background);
+    }
 
     @media (min-width: 320px) and (max-width: 768px) {
         margin-right: 3.3%;
