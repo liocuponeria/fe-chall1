@@ -42,7 +42,7 @@ html, body, #root {
 *, button, input {
     border: 0;
     background: none;
-    font-family: var(---primary-font);
+    font-family: var(--primary-font);
 }
 button {
     outline: 0;

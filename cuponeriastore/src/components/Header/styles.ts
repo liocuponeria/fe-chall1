@@ -2,14 +2,16 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.header`
   background-color: var(--color-black);
-  padding: 2.5%;
+  padding: 2.5% 0;
 
-    @media (min-width: 320px) and (max-width: 768px) {
-        padding: 5%;
+    @media(min-width: 320px) and (max-width: 1300px) {
+        padding: 5% 5%;
     }
 `;
 
 export const ContainerWrapper = styled.div`
+    width: 100%;
+    max-width: 1200px;
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     align-items: center;
@@ -60,7 +62,7 @@ export const ContainerButtons = styled.div`
     
     @media (min-width: 320px) and (max-width: 768px) {
         margin-top: 10%;
-        overflow-x: scroll;
+        overflow-x: auto;
         justify-content: unset;
 
         ::-webkit-scrollbar-track {
@@ -80,38 +82,5 @@ export const ContainerButtons = styled.div`
             width: 6.25rem;
             height: 4px;
         }
-    }
-`;
-
-export const ContainerButtonHome = styled.div``;
-
-export const Button = styled.button`
-    &:nth-child(1) {
-        padding: 15px 30px;
-        background-color: var(--color-yellow);
-        transition: background-color .4s;
-    }
-    &:nth-child(1):hover {
-        background-color: var(--color-yellow-hover);
-    }
-    padding: 15px 30px;
-    background: var(--color-white);
-    color: var(--color-black);
-    margin-right: 1.2%;
-    font-weight: bold;
-    text-transform: uppercase;
-    transition: background-color .4s;
-    &:hover {
-        background-color: var(--color-background);
-    }
-
-    @media (min-width: 320px) and (max-width: 768px) {
-        margin-right: 3.3%;
-        font-size: 10px;
-        padding: 13px 30px;
-        flex-wrap: nowrap;
-        white-space: nowrap;
-        width: auto;
-        margin-bottom: 4%;
     }
 `;

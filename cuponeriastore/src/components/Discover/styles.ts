@@ -1,13 +1,14 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-export const DiscoverContainer = styled.div<{ bgContainer: string }>`
+export const DiscoverContainer = styled.div<{ bgcontainer: string }>`
     display: grid;
     grid-template-areas: 
-    "image image title button button"
-    "image image description description description"
+        "image image image title title button"
+        "image image image description description description"
     ;
 
-    background-color: ${props => (props.bgContainer)};
+    background-color: ${props => (props.bgcontainer)};
     padding: 2%;
     border-radius: var(--primary-border);
 
@@ -45,7 +46,7 @@ export const DiscoverContainerImg = styled.div`
 
 export const DiscoverImage = styled.img`
     width: 100%;
-    width: 350px;
+    max-width: 250px;
 
     @media(min-width: 320px) and (max-width: 1300px) {
         margin-right: 0;
@@ -75,11 +76,11 @@ export const DiscoverTitle = styled.h3`
     }
 `;
 
-export const DiscoverLink = styled.a<{ bgButton: string, bgButtonHover: string }> `
+export const DiscoverLink = styled(Link)<{ bgbutton: string, bgbuttonhover: string }> `
     grid-area: button;
     
     height: 50px;
-    background-color: ${props => (props.bgButton)};
+    background-color: ${props => (props.bgbutton)};
     color: var(--color-white);
     display: flex;
     justify-content: center;
@@ -91,9 +92,10 @@ export const DiscoverLink = styled.a<{ bgButton: string, bgButtonHover: string }
 
     cursor: pointer;
     transition: background-color .4s;
+    text-decoration: none;
 
     &:hover {
-        background-color: ${props => (props.bgButtonHover)};
+        background-color: ${props => (props.bgbuttonhover)};
     }
 
     @media(min-width: 320px) and (max-width: 1300px) {

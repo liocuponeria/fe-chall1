@@ -5,7 +5,7 @@ import { FeaturedSingleContainer, FeaturedContainerImg, FeaturedImg, FeaturedBad
 const Featured: React.FC = () => {
 	return (
 		<FeaturedSingleContainer>
-			<FeaturedContainerImg to="">
+			<FeaturedContainerImg to="single-product/1">
 				<FeaturedImg src={img2} />
 				<FeaturedBadgeContainer>
 					<FeaturedPrice>R$15,99</FeaturedPrice>

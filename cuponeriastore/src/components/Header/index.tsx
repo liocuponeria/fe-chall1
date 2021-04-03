@@ -1,8 +1,8 @@
 import React from 'react';
 import logo from '../../assets/logo.svg';
-import { Wrapper, ContainerWrapper, ContainerImg, ContainerTitle, LogoImg, Title, ContainerButtons, Button } from './styles';
+import { Wrapper, ContainerWrapper, ContainerImg, ContainerTitle, LogoImg, Title, ContainerButtons } from './styles';
 
-const Header: React.FC = () => {
+const Header: React.FC = ({ children }) => {
     return (
         <Wrapper>
             <ContainerWrapper>
@@ -15,13 +15,7 @@ const Header: React.FC = () => {
             </ContainerWrapper>
 
             <ContainerButtons>
-                {/* <ContainerButtonHome> */}
-                    <Button>Home</Button>
-                {/* </ContainerButtonHome> */}
-                    <Button>Men Clothing</Button>
-                    <Button>Wonem Clothing</Button>
-                    <Button>Electronis</Button>
-                    <Button>JEWELERY</Button>
+                {children}
             </ContainerButtons>
         </Wrapper>
     );

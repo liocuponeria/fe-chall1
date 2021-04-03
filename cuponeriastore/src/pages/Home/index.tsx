@@ -2,12 +2,20 @@ import React from 'react';
 import Discover from '../../components/Discover';
 import Featured from '../../components/Featured';
 import Header from '../../components/Header';
-import { Container, ContainerContents, DiscoverArea, Title, FeaturedContainer } from './styles';
+import { Container, Button, ContainerContents, DiscoverArea, Title, FeaturedContainer } from './styles';
 
 const Home: React.FC = () => {
     return (
         <Container>
-            <Header />
+            
+            <Header>
+                <Button>Home</Button>
+                <Button>Men Clothing</Button>
+                <Button>Wonem Clothing</Button>
+                <Button>Electronis</Button>
+                <Button>JEWELERY</Button>
+            </Header>
+
             <ContainerContents>
                 <Title>Discover</Title>
                 <DiscoverArea>
