@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../../components/Header';
 import arrow from '../../assets/arrow.svg';
 import { Container, Button, ArrowIcon, DetailsContainer, DetailsTitle } from './styles';
-import DiscoverSingleProduct from '../../components/DiscoverSingleProduct';
+import DetailsSingleProduct from '../../components/DetailsSingleProduct';
 
 const SingleProduct: React.FC = () => {
     return (
@@ -16,7 +16,7 @@ const SingleProduct: React.FC = () => {
 
             <DetailsContainer>
             <DetailsTitle>Detalhes</DetailsTitle>
-                <DiscoverSingleProduct />
+                <DetailsSingleProduct />
             </DetailsContainer>
         </Container>
     );

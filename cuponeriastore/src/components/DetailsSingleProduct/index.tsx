@@ -3,7 +3,7 @@ import img3 from '../../assets/3.png';
 
 import { SingleProductContainer, SingleProductContainerImg, SingleProductImg, SingleProductTitle, DiscoverLink, SingleProductDescription } from './styles';
 
-const DiscoverSingleProduct: React.FC = () => {
+const DetailsSingleProduct: React.FC = () => {
     return (
         <SingleProductContainer bgContainer="rgba(63,127,203, 0.2)">
             <SingleProductContainerImg>
@@ -16,4 +16,4 @@ const DiscoverSingleProduct: React.FC = () => {
     );
 }
 
-export default DiscoverSingleProduct;
+export default DetailsSingleProduct;
