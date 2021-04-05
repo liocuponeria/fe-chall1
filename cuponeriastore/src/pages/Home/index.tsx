@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Discover, { DiscoverProducts } from '../../components/Discover';
 import Featured, { FeaturedProducts } from '../../components/Featured';
 import Header from '../../components/Header';
+
 import api from '../../services/api';
 
 import { Container, Button, ContainerContents, DiscoverArea, Title, FeaturedContainer } from './styles';
