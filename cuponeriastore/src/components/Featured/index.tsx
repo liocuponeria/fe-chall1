@@ -2,17 +2,30 @@ import React from 'react';
 import img2 from '../../assets/2.1.png';
 import { FeaturedSingleContainer, FeaturedContainerImg, FeaturedImg, FeaturedBadgeContainer, FeaturedPrice, FeaturedContainerName, FeaturedName } from './styles';
 
-const Featured: React.FC = () => {
+export interface FeaturedProducts {
+    id: number;
+    image: string;
+    price: number;
+    title: string;
+}
+
+interface FeaturedProductsProps {
+    featured: FeaturedProducts;
+}
+
+const Featured: React.FC<FeaturedProductsProps> = ({ featured }) => {
+	const formatPrice = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(featured.price);
+
 	return (
 		<FeaturedSingleContainer>
-			<FeaturedContainerImg to="single-product/1">
-				<FeaturedImg src={img2} />
+			<FeaturedContainerImg to={`single-product/${featured.id}`}>
+				<FeaturedImg src={featured.image} />
 				<FeaturedBadgeContainer>
-					<FeaturedPrice>R$15,99</FeaturedPrice>
+					<FeaturedPrice>{formatPrice}</FeaturedPrice>
 				</FeaturedBadgeContainer>
 			</FeaturedContainerImg>
 			<FeaturedContainerName>
-				<FeaturedName>Mens Casual Slim Fit</FeaturedName>
+				<FeaturedName>{featured.title}</FeaturedName>
 			</FeaturedContainerName>
 		</FeaturedSingleContainer>
 	);

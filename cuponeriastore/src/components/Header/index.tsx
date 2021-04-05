@@ -6,7 +6,7 @@ const Header: React.FC = ({ children }) => {
     return (
         <Wrapper>
             <ContainerWrapper>
-                <ContainerImg>
+                <ContainerImg to="/">
                     <LogoImg src={logo} />
                 </ContainerImg>
                 <ContainerTitle>

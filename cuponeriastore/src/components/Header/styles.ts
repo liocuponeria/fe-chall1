@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Wrapper = styled.header`
@@ -24,7 +25,7 @@ export const ContainerWrapper = styled.div`
     }
 `;
 
-export const ContainerImg = styled.div`
+export const ContainerImg = styled(Link)`
     @media (min-width: 320px) and (max-width: 768px) {
         margin-right: 5%;
     }

@@ -15,6 +15,7 @@ export default createGlobalStyle `
     --color-yellow-hover: #ebc410;
     --color-pink: rgb(244, 228, 228);
     --color-pink-dark: #EE797E;
+    --color-pink-hover: #eb6368;
     --color-blue: #d9e5e5;
     --color-blue-dark: #619CEB;
     --color-blue-hover: #428bed;

@@ -7,6 +7,7 @@ export const SingleProductContainer = styled.div<{ bgContainer: string }> `
         "image image title title button"
         "image image description description description"
     ;
+    grid-template-rows: 80px;
     background-color: ${props => (props.bgContainer)};
     padding: 4%;
     border-radius: var(--primary-border);
@@ -41,6 +42,8 @@ export const SingleProductContainerImg = styled.div `
 export const SingleProductImg = styled.img `
     width: 100%;
     max-width: 494px;
+    height: 100%;
+    max-height: 410px;
 
     @media(min-width: 320px) and (max-width: 768px) {
         width: 100%;

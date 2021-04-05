@@ -9,7 +9,7 @@ function Routes() {
         <BrowserRouter>
             <Route path="/" exact component={Home} />
             {/* <Route path="/:category" component={Home} /> */}
-            <Route path="/single-product/:productid" exact component={SingleProduct} />
+            <Route path="/single-product/:productid" component={SingleProduct} />
         </BrowserRouter>
     );
 }

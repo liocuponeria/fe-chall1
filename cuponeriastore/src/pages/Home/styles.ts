@@ -48,6 +48,10 @@ export const Title = styled.h2 `
     font-size: 35px;
     margin-bottom: 1.5%;
     text-transform: uppercase;
+
+    @media(min-width: 320px) and (max-width: 767px) {
+        font-size: 28px;
+    }
 `;
 
 export const DiscoverArea = styled.div `

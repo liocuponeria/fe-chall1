@@ -6,13 +6,16 @@ export const FeaturedSingleContainer = styled.div `
     min-width: 200px;
     max-width: 200px;
     height: auto;
-    background-color: #fff;
+    background-color: var(--color-white);
     border-top-left-radius: var(--primary-border);
     border-top-right-radius: var(--primary-border);
     -webkit-box-shadow: 1px 3px 10px 2px rgba(145,145,145,0.31); 
     box-shadow: 1px 3px 10px 2px rgba(145,145,145,0.31);
     margin-right: 1%;
     margin-bottom: 5%;
+
+    display: flex;
+    flex-direction: column;
 
     @media(min-width: 320px) and (max-width: 428px) {
         margin-right: 6%;
@@ -25,12 +28,18 @@ export const FeaturedSingleContainer = styled.div `
 export const FeaturedContainerImg = styled(Link) `
     text-decoration: none;
     width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 `;
 
 export const FeaturedImg = styled.img `
     width: 100%;
     max-width: 200px;
     padding: 7%;
+    max-height: 222px;
+    flex: 1;
 `;
 
 export const FeaturedBadgeContainer = styled.div `
@@ -60,4 +69,9 @@ export const FeaturedName = styled.p `
     font-weight: bold;
     font-size: 14px;
     text-align: center;
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+
+    text-overflow: ellipsis;
 `;
