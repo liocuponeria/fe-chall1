@@ -25,12 +25,12 @@ const Discover: React.FC<DiscoverProductsProps> = ({ discover }) => {
     }
 
     return (
-        <DiscoverContainer bgcontainer={discover.id === 1 ? "rgba(63,127,203, 0.2)" : "rgba(200,118,118, 0.2)"}>
+        <DiscoverContainer bgcontainer={discover.id === 1 ? "rgba(200,118,118, 0.2)" : "rgba(63,127,203, 0.2)"}>
             <DiscoverContainerImg>
                 <DiscoverImage src={discover.image} />
             </DiscoverContainerImg>
             <DiscoverTitle>{discover.title}</DiscoverTitle>
-            <DiscoverLink to={`single-product/${discover.id}`} bgbutton={discover.id === 1 ? '#619CEB' : '#EE797E'} bgbuttonhover={discover.id === 1 ? "#428bed": "#eb6368"}>Shop</DiscoverLink>
+            <DiscoverLink to={`single-product/${discover.id}`} bgbutton={discover.id === 1 ? "#EE797E" : "#619CEB"} bgbuttonhover={discover.id === 1 ? "#eb6368" : "#428bed"}>Shop</DiscoverLink>
             <DiscoverDescription>{description}</DiscoverDescription>
         </DiscoverContainer>
     );

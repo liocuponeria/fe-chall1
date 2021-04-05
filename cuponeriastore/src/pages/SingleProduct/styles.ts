@@ -31,7 +31,7 @@ export const DetailsContainer = styled.div `
     max-width: 1200px;
     margin: 0 auto;
 
-    @media(min-width: 320px) and (max-width: 1300px) {
+    @media(min-width: 280px) and (max-width: 1300px) {
         padding: 10% 5%;
     }
 `;

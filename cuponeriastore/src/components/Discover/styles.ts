@@ -16,7 +16,7 @@ export const DiscoverContainer = styled.div<{ bgcontainer: string }>`
     -webkit-box-shadow: 1px 3px 10px 2px rgba(145,145,145,0.31); 
     box-shadow: 1px 3px 10px 2px rgba(145,145,145,0.31);
 
-    @media(min-width: 320px) and (max-width: 1300px) {
+    @media(min-width: 280px) and (max-width: 1300px) {
         grid-template-areas: 
             "image"
             "title"
@@ -36,7 +36,7 @@ export const DiscoverContainerImg = styled.div`
     margin-right: 12%;
 
 
-    @media(min-width: 320px) and (max-width: 1300px) {
+    @media(min-width: 280px) and (max-width: 1300px) {
         margin-right: 0;
     }
 `;
@@ -47,7 +47,7 @@ export const DiscoverImage = styled.img`
     height: 100%;
     max-height: 240px;
 
-    @media(min-width: 320px) and (max-width: 1300px) {
+    @media(min-width: 280px) and (max-width: 1300px) {
         width: unset;
     }
 `;
@@ -61,7 +61,7 @@ export const DiscoverTitle = styled.h3`
     font-family: var(--primary-font);
     font-weight: 700;
 
-    @media(min-width: 320px) and (max-width: 1300px) {
+    @media(min-width: 280px) and (max-width: 1300px) {
         text-align: center;
         margin: 7% 0;
     }
@@ -93,7 +93,7 @@ export const DiscoverLink = styled(Link)<{ bgbutton: string, bgbuttonhover: stri
         background-color: ${props => (props.bgbuttonhover)};
     }
 
-    @media(min-width: 320px) and (max-width: 1300px) {
+    @media(min-width: 280px) and (max-width: 1300px) {
         width: 40%;
         align-items: center;
         order: 1;
@@ -109,7 +109,7 @@ export const DiscoverDescription = styled.p`
     font-weight: 500;
     color: var(--color-grey);
     
-    @media(min-width: 320px) and (max-width: 1300px) {
+    @media(min-width: 280px) and (max-width: 1300px) {
         display: none;
     }
 `;

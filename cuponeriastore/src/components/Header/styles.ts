@@ -5,7 +5,7 @@ export const Wrapper = styled.header`
   background-color: var(--color-black);
   padding: 2.5% 0;
 
-    @media(min-width: 320px) and (max-width: 1300px) {
+    @media(min-width: 280px) and (max-width: 1300px) {
         padding: 5% 5%;
     }
 `;
@@ -18,7 +18,7 @@ export const ContainerWrapper = styled.div`
     align-items: center;
     margin: 0 auto;
 
-    @media (min-width: 320px) and (max-width: 767px) {
+    @media (min-width: 280px) and (max-width: 767px) {
         display: flex;
         align-items: center;
         justify-content: flex-start;
@@ -26,7 +26,7 @@ export const ContainerWrapper = styled.div`
 `;
 
 export const ContainerImg = styled(Link)`
-    @media (min-width: 320px) and (max-width: 768px) {
+    @media (min-width: 280px) and (max-width: 768px) {
         margin-right: 5%;
     }
 `;
@@ -39,7 +39,7 @@ export const LogoImg = styled.img`
     width: 64px;
     height: 64px;
 
-    @media (min-width: 320px) and (max-width: 768px) {
+    @media (min-width: 280px) and (max-width: 768px) {
         width: 50px;
         height: 50px;
     }
@@ -50,38 +50,33 @@ export const Title = styled.h1`
     text-transform: uppercase;
     color: var(--color-white);
 
-    @media (min-width: 320px) and (max-width: 768px) {
+    @media (min-width: 280px) and (max-width: 768px) {
         font-size: 20px;
     }
 `;
 
-export const ContainerButtons = styled.div`
+export const ContainerButtons = styled.div<{ justify: string }>`
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
     margin-top: 2%;
     display: flex;
-    justify-content: center;
+    justify-content: ${props => props.justify};
     align-items: center;
-    
-    @media (min-width: 320px) and (max-width: 768px) {
-        margin-top: 10%;
-        overflow-x: auto;
-        justify-content: unset;
+    overflow-x: auto;
 
-        ::-webkit-scrollbar-track {
-            background-color: var(--color-yellow);
-            height: 2px;
-        }
-        ::-webkit-scrollbar-track {
-            background-color: #ddd;
-            height: 2px;
-        }
-        ::-webkit-scrollbar-thumb {
-            height: 2px;
-            background-color: var(--color-yellow);
-            border-radius: 2.5rem;
-        }
-        ::-webkit-scrollbar {
-            width: 6.25rem;
-            height: 4px;
-        }
+    ::-webkit-scrollbar-track {
+        background-color: var(--color-grey);
+        height: 2px;
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: var(--color-yellow);
+    }
+    ::-webkit-scrollbar {
+        height: 4px;
+    }
+    @media (min-width: 280px) and (max-width: 1250px) {
+        margin-top: 6%;
+        justify-content: unset;
     }
 `;

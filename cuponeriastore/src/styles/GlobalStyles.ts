@@ -34,10 +34,6 @@ export default createGlobalStyle `
 html, body, #root {
     max-height: 100vh;
     max-width: 100vw;
-    width: 100%;
-    height: 100%;
-    
-    font-family: var(--primary-font);
     background-color: var(--color-background);
 }
 *, button, input {

@@ -15,7 +15,7 @@ export const SingleProductContainer = styled.div<{ bgContainer: string }> `
     -webkit-box-shadow: 1px 3px 10px 2px rgba(145,145,145,0.31); 
     box-shadow: 1px 3px 10px 2px rgba(145,145,145,0.31);
 
-    @media(min-width: 320px) and (max-width: 800px) {
+    @media(min-width: 280px) and (max-width: 800px) {
         grid-template-areas: 
             "image"
             "title"
@@ -34,7 +34,7 @@ export const SingleProductContainerImg = styled.div `
     grid-area: image;
     margin-right: 10%;
 
-    @media(min-width: 320px) and (max-width: 768px) {
+    @media(min-width: 280px) and (max-width: 768px) {
         margin-right: 0;
     }
 `;
@@ -45,7 +45,7 @@ export const SingleProductImg = styled.img `
     height: 100%;
     max-height: 410px;
 
-    @media(min-width: 320px) and (max-width: 800px) {
+    @media(min-width: 280px) and (max-width: 800px) {
         width: 100%;
         max-width: 200px;
     }
@@ -56,7 +56,7 @@ export const SingleProductTitle = styled.h1 `
     font-size: 30px;
     margin-right: 10%;
 
-    @media(min-width: 320px) and (max-width: 800px) {
+    @media(min-width: 280px) and (max-width: 800px) {
         font-size: 22px;
         text-align: center;
         margin-right: 0;
@@ -79,7 +79,6 @@ export const DiscoverLink = styled(Link)<{ bgbutton: string, bgbuttonhover: stri
     font-weight: 700;
     font-size: 24px;
 
-    cursor: pointer;
     transition: background-color .4s;
     text-decoration: none;
 
@@ -87,7 +86,7 @@ export const DiscoverLink = styled(Link)<{ bgbutton: string, bgbuttonhover: stri
         background-color: ${props => (props.bgbuttonhover)};
     }
 
-    @media(min-width: 320px) and (max-width: 425px) {
+    @media(min-width: 280px) and (max-width: 425px) {
         width: 100%;
         height: 50px;
         align-items: center;
@@ -110,7 +109,7 @@ export const SingleProductDescription = styled.p `
     margin-top: 4%;
     line-height: 30px;
 
-    @media(min-width: 320px) and (max-width: 800px) {
+    @media(min-width: 280px) and (max-width: 800px) {
         order: 2;
         text-align: center;
     }

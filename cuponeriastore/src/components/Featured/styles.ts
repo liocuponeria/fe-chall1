@@ -16,7 +16,7 @@ export const FeaturedSingleContainer = styled.div `
     display: flex;
     flex-direction: column;
 
-    @media(min-width: 320px) and (max-width: 428px) {
+    @media(min-width: 280px) and (max-width: 428px) {
         margin-right: 6%;
     }
     @media(min-width: 429px) and (max-width: 1024px) {

@@ -1,8 +1,10 @@
 import React from 'react';
 import logo from '../../assets/logo.svg';
+import { useLocation } from "react-router-dom";
 import { Wrapper, ContainerWrapper, ContainerImg, ContainerTitle, LogoImg, Title, ContainerButtons } from './styles';
 
 const Header: React.FC = ({ children }) => {
+    const location = useLocation();
     return (
         <Wrapper>
             <ContainerWrapper>
@@ -14,7 +16,7 @@ const Header: React.FC = ({ children }) => {
                 </ContainerTitle>
             </ContainerWrapper>
 
-            <ContainerButtons>
+            <ContainerButtons justify={location.pathname === '/' ? "space-between" : "center"}>
                 {children}
             </ContainerButtons>
         </Wrapper>
