@@ -1,15 +1,13 @@
 import React from 'react';
 
-import img from '../../assets/1.png';
 import { DiscoverContainer, DiscoverContainerImg, DiscoverImage, DiscoverTitle, DiscoverLink, DiscoverDescription } from './styles';
 
 export interface DiscoverProducts {
-    category: string;
-    description: string;
     id: number;
     image: string;
-    price: number;
     title: string;
+    price: number;
+    description: string;
 }
 
 interface DiscoverProductsProps {

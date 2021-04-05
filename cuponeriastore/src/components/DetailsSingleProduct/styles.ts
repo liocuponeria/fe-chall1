@@ -7,7 +7,7 @@ export const SingleProductContainer = styled.div<{ bgContainer: string }> `
         "image image title title button"
         "image image description description description"
     ;
-    grid-template-rows: 80px;
+    grid-template-rows: 100px;
     background-color: ${props => (props.bgContainer)};
     padding: 4%;
     border-radius: var(--primary-border);
@@ -15,7 +15,7 @@ export const SingleProductContainer = styled.div<{ bgContainer: string }> `
     -webkit-box-shadow: 1px 3px 10px 2px rgba(145,145,145,0.31); 
     box-shadow: 1px 3px 10px 2px rgba(145,145,145,0.31);
 
-    @media(min-width: 320px) and (max-width: 768px) {
+    @media(min-width: 320px) and (max-width: 800px) {
         grid-template-areas: 
             "image"
             "title"
@@ -45,9 +45,9 @@ export const SingleProductImg = styled.img `
     height: 100%;
     max-height: 410px;
 
-    @media(min-width: 320px) and (max-width: 768px) {
+    @media(min-width: 320px) and (max-width: 800px) {
         width: 100%;
-        max-width: 217px;
+        max-width: 200px;
     }
 `;
 
@@ -56,7 +56,7 @@ export const SingleProductTitle = styled.h1 `
     font-size: 30px;
     margin-right: 10%;
 
-    @media(min-width: 320px) and (max-width: 768px) {
+    @media(min-width: 320px) and (max-width: 800px) {
         font-size: 22px;
         text-align: center;
         margin-right: 0;
@@ -87,7 +87,7 @@ export const DiscoverLink = styled(Link)<{ bgbutton: string, bgbuttonhover: stri
         background-color: ${props => (props.bgbuttonhover)};
     }
 
-    @media(min-width: 320px) and (max-width: 428px) {
+    @media(min-width: 320px) and (max-width: 425px) {
         width: 100%;
         height: 50px;
         align-items: center;
@@ -95,7 +95,7 @@ export const DiscoverLink = styled(Link)<{ bgbutton: string, bgbuttonhover: stri
         margin: 10% 0%;
     }
 
-    @media(min-width: 429px) and (max-width: 768px) {
+    @media(min-width: 426px) and (max-width: 800px) {
         width: 60%;
         height: 50px;
         margin: 6% 0%;
@@ -110,7 +110,7 @@ export const SingleProductDescription = styled.p `
     margin-top: 4%;
     line-height: 30px;
 
-    @media(min-width: 320px) and (max-width: 768px) {
+    @media(min-width: 320px) and (max-width: 800px) {
         order: 2;
         text-align: center;
     }

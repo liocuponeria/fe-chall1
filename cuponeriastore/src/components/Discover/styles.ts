@@ -39,10 +39,6 @@ export const DiscoverContainerImg = styled.div`
     @media(min-width: 320px) and (max-width: 1300px) {
         margin-right: 0;
     }
-
-    @media(min-width: 1300px) and (max-width: 1440px) {
-        margin-right: 8%;
-    }
 `;
 
 export const DiscoverImage = styled.img`
@@ -52,15 +48,7 @@ export const DiscoverImage = styled.img`
     max-height: 240px;
 
     @media(min-width: 320px) and (max-width: 1300px) {
-        margin-right: 0;
         width: unset;
-        height: 290px;
-
-    }
-
-    @media(min-width: 1300px) and (max-width: 1440px) {
-        width: 300px;
-        height: 290px;
     }
 `;
 
@@ -75,11 +63,10 @@ export const DiscoverTitle = styled.h3`
 
     @media(min-width: 320px) and (max-width: 1300px) {
         text-align: center;
-        font-size: 18px;
         margin: 7% 0;
     }
 
-    @media(min-width: 1300px) and (max-width: 1440px) {
+    @media(min-width: 1301px) and (max-width: 1440px) {
         font-size: 17px;
     }
 `;
@@ -121,18 +108,8 @@ export const DiscoverDescription = styled.p`
 
     font-weight: 500;
     color: var(--color-grey);
-
-    margin-top: 2%;
-
-    @media(min-width: 320px) and (max-width: 767px) {
+    
+    @media(min-width: 320px) and (max-width: 1300px) {
         display: none;
-    }
-    @media(min-width: 768px) and (max-width: 1300px) {
-        text-align: center;
-        margin-bottom: 5%;
-        display: none;
-    }
-    @media(min-width: 1301px) and (max-width: 1460px) {
-        line-height: 25px;
     }
 `;

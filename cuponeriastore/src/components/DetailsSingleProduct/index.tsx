@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import img3 from '../../assets/3.png';
+import React from 'react';
 
 import { SingleProductContainer, SingleProductContainerImg, SingleProductImg, SingleProductTitle, DiscoverLink, SingleProductDescription } from './styles';
 

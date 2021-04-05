@@ -21,7 +21,7 @@ const SingleProduct: React.FC = () => {
             const ProductArray = Array(response.data);
             setSingleProduct(ProductArray);
         })
-    }, []);
+    }, [productid]);
 
     return (
         <Container>

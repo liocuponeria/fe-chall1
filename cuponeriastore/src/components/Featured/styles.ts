@@ -5,7 +5,6 @@ export const FeaturedSingleContainer = styled.div `
     width: 100%;
     min-width: 200px;
     max-width: 200px;
-    height: auto;
     background-color: var(--color-white);
     border-top-left-radius: var(--primary-border);
     border-top-right-radius: var(--primary-border);
@@ -31,7 +30,6 @@ export const FeaturedContainerImg = styled(Link) `
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 `;
 
 export const FeaturedImg = styled.img `
@@ -45,9 +43,6 @@ export const FeaturedImg = styled.img `
 export const FeaturedBadgeContainer = styled.div `
     display: flex;
     justify-content: flex-end;
-    align-items: flex-end;
-    margin-top: -15%;
-    margin-bottom: 5%;
     margin: -15% 6% 5% 0;
 `;
 

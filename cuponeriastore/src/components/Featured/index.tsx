@@ -1,5 +1,4 @@
 import React from 'react';
-import img2 from '../../assets/2.1.png';
 import { FeaturedSingleContainer, FeaturedContainerImg, FeaturedImg, FeaturedBadgeContainer, FeaturedPrice, FeaturedContainerName, FeaturedName } from './styles';
 
 export interface FeaturedProducts {

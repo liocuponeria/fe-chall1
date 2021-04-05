@@ -14,6 +14,7 @@ export const Button = styled(Link)`
     text-transform: uppercase;
     text-decoration: none;
     color: var(--color-black);
+    border-radius: var(--primary-border);
 
     &:hover {
         background-color: var(--color-yellow-hover);
