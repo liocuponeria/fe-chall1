@@ -20,12 +20,14 @@ const Container = styled.div`
   position: relative;
 
   img {
+    max-width: 179px;
     width: 100%;
+    height: 229px;
     height: 100%;
 
     padding: 1.5rem;
 
-    object-fit: cover;
+    object-fit: contain;
     object-position: center;
   }
 
@@ -41,7 +43,7 @@ const Container = styled.div`
 const Title = styled.h1`
   width: 100%;
 
-  padding: 1rem 0;
+  padding: 1rem;
 
   font-size: 1rem;
   font-weight: 600;
@@ -51,10 +53,9 @@ const Title = styled.h1`
 
   text-align: center;
 
+  white-space: nowrap;
   overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
 `;
 
 const Price = styled.div`
@@ -79,15 +80,24 @@ const Price = styled.div`
   right: 24px;
 `;
 
-export default function FeaturedCard() {
+interface IFeaturedCard {
+  id: string;
+  image: string;
+  title: string;
+  price: number;
+}
+
+export default function FeaturedCard({
+  image,
+  title,
+  price,
+  id,
+}: IFeaturedCard) {
   return (
     <Container>
-      <img
-        src="https://images.prismic.io/worldtripnextjs/24b1e69a-a7ca-4b36-b607-3c5b0cd9364c_image+3.png?auto=compress,format"
-        alt="Image"
-      />
-      <Title>Mens Casual Slim Fit</Title>
-      <Price>R$ 15,99</Price>
+      <img src={image} alt={title} />
+      <Title>{title}</Title>
+      <Price>{price}</Price>
     </Container>
   );
 }

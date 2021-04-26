@@ -39,14 +39,34 @@ const DiscoverCards = styled.div`
   }
 `;
 
-export default function Discover() {
+type IProduct = {
+  id: string;
+  title: string;
+  price: number;
+  description: string;
+  category: string;
+  image: string;
+};
+
+interface IDiscover {
+  discoverProducts: Array<IProduct>;
+}
+
+export default function Discover({ discoverProducts }: IDiscover) {
   return (
     <Container>
       <Wrapper>
         <Title>Discover</Title>
         <DiscoverCards>
-          <DiscoverCard />
-          <DiscoverCard />
+          {discoverProducts.map((item) => (
+            <DiscoverCard
+              key={item.id}
+              image={String(item.image)}
+              title={item.title}
+              description={item.description}
+              id={item.id}
+            />
+          ))}
         </DiscoverCards>
       </Wrapper>
     </Container>

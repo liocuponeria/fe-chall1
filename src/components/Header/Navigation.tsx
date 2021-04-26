@@ -59,19 +59,19 @@ const Container = styled.ul`
 export default function Navigation() {
   return (
     <Container>
-      <Link href="">
+      <Link href="/">
         <li>Home</li>
       </Link>
-      <Link href="">
+      <Link href="/category/men's clothing">
         <li>Men Clothing</li>
       </Link>
-      <Link href="">
+      <Link href="/category/women's clothing">
         <li>Women Clothing</li>
       </Link>
-      <Link href="">
+      <Link href="/category/electronics">
         <li>Electronics</li>
       </Link>
-      <Link href="">
+      <Link href="/category/jewelery">
         <li>Jewelery</li>
       </Link>
     </Container>

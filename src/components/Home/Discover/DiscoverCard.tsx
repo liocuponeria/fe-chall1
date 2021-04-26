@@ -19,10 +19,11 @@ const Container = styled.div`
 
   img {
     max-width: 288px;
+    max-height: 162px;
     width: 100%;
     height: 100%;
 
-    object-fit: cover;
+    object-fit: contain;
     object-position: center;
 
     @media (max-width: 500px) {
@@ -95,21 +96,26 @@ const Button = styled.a`
   background: red;
 `;
 
-export default function DiscoverCard() {
+interface IDiscoverCard {
+  id: string;
+  image: string;
+  title: string;
+  description: string;
+}
+
+export default function DiscoverCard({
+  image,
+  title,
+  description,
+  id,
+}: IDiscoverCard) {
   return (
     <Container>
-      <img
-        src="https://images.unsplash.com/photo-1512790182412-b19e6d62bc39?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1189&q=80"
-        alt="Image"
-      />
+      <img src={image} alt={title} />
       <Content>
-        <Title>Solid Gold Petite Micropave </Title>
-        <Description>
-          "Satisfaction Guaranteed. Return or exchange any order within 30
-          days.Designed and sold by Hafeez Center in the United States.
-          Satisfaction Guaranteed. Return or exchange any order within 30 days."
-        </Description>
-        <Button href="">Shop</Button>
+        <Title>{title}</Title>
+        <Description>{description}</Description>
+        <Button href={`/products/${id}`}>Shop</Button>
       </Content>
     </Container>
   );
