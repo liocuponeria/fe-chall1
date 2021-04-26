@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import LoadingDiscoverCard from '../../Shimmer/LoadingComponents/LoadingDiscoverCard';
 
 const Container = styled.div`
   max-width: 592px;
@@ -109,6 +110,18 @@ export default function DiscoverCard({
   description,
   id,
 }: IDiscoverCard) {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+  }, []);
+
+  if (isLoading) {
+    return <LoadingDiscoverCard />;
+  }
+
   return (
     <Container>
       <img src={image} alt={title} />

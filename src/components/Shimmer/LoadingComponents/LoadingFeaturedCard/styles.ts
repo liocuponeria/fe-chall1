@@ -2,21 +2,20 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   background: #fff;
-  border-radius: 0.5rem;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  border-radius: 8px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.03), 0 2px 3px rgba(0, 0, 0, 0.05);
 
-  .no-shadow {
-    width: 227px;
-    height: 327px;
+  width: 227px;
+  height: 327px;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
-    @media (max-width: 568px) {
-      margin-bottom: 16px;
-    }
+  @media (max-width: 568px) {
+    min-width: 227px;
+    margin-bottom: 16px;
   }
 
   .image-skeleton {

@@ -3,11 +3,11 @@ import Skeleton from '../../Skeleton';
 
 import { Container } from './styles';
 
-const LoadingFeaturedCard: React.FC = () => {
+const LoadingDiscoverCard: React.FC = () => {
   return (
     <Container>
       <Skeleton className="image-skeleton" />
-      <div>
+      <div className="row-container">
         <Skeleton className="row-skeleton" />
         <Skeleton className="row-skeleton" />
         <Skeleton className="row-skeleton" />
@@ -16,4 +16,4 @@ const LoadingFeaturedCard: React.FC = () => {
   );
 };
 
-export default LoadingFeaturedCard;
+export default LoadingDiscoverCard;
