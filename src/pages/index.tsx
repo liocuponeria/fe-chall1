@@ -1,4 +1,5 @@
 import Header from '../components/Header';
+import Featured from '../components/Home/Featured';
 import Discover from './../components/Home/Discover/index';
 
 export default function Home() {
@@ -6,6 +7,7 @@ export default function Home() {
     <>
       <Header />
       <Discover />
+      <Featured />
     </>
   );
 }

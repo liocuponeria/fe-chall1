@@ -13,15 +13,40 @@ const Container = styled.ul`
     cursor: pointer;
     white-space: nowrap;
 
+    padding-bottom: 8px;
+
     & + li {
       margin-left: 24px;
     }
   }
 
   @media (max-width: 568px) {
-    width: 100%;
+    width: calc(100% - 32px);
     max-width: 600px;
+
     overflow-x: auto;
+
+    align-items: flex-start;
+    justify-content: start;
+
+    ::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      height: 8px;
+
+      background: #444444;
+      border: 0.5rem;
+      border-radius: 0.5rem;
+    }
+
+    ::-webkit-scrollbar-track {
+      height: 8px;
+
+      background: #222;
+      border-radius: 0.5rem;
+    }
   }
 `;
 
