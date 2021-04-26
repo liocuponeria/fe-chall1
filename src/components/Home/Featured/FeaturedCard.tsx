@@ -21,6 +21,8 @@ const Container = styled.div`
 
   position: relative;
 
+  cursor: pointer;
+
   img {
     max-width: 179px;
     width: 100%;
