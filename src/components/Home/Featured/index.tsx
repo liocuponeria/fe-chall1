@@ -7,11 +7,6 @@ const Container = styled.div`
   height: 100%;
 
   padding: 2rem 1rem;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 `;
 
 const Wrapper = styled.div`
@@ -33,6 +28,35 @@ const FeaturedCards = styled.div`
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 568px) {
+    flex-wrap: unset;
+    align-items: flex-start;
+    justify-content: start;
+
+    overflow-x: scroll;
+
+    scroll-snap-type: x mandatory;
+
+    ::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      height: 8px;
+
+      background: #818181;
+      border: 0.5rem;
+      border-radius: 0.5rem;
+    }
+
+    ::-webkit-scrollbar-track {
+      height: 8px;
+
+      background: #cecece;
+      border-radius: 0.5rem;
+    }
+  }
 `;
 
 export default function Featured() {
@@ -41,6 +65,20 @@ export default function Featured() {
       <Wrapper>
         <Title>Featured</Title>
         <FeaturedCards>
+          <FeaturedCard />
+          <FeaturedCard />
+          <FeaturedCard />
+          <FeaturedCard />
+          <FeaturedCard />
+          <FeaturedCard />
+          <FeaturedCard />
+          <FeaturedCard />
+          <FeaturedCard />
+          <FeaturedCard />
+          <FeaturedCard />
+          <FeaturedCard />
+          <FeaturedCard />
+          <FeaturedCard />
           <FeaturedCard />
           <FeaturedCard />
           <FeaturedCard />

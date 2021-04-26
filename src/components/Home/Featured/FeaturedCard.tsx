@@ -28,6 +28,14 @@ const Container = styled.div`
     object-fit: cover;
     object-position: center;
   }
+
+  @media (max-width: 568px) {
+    margin-bottom: 16px;
+
+    min-width: 227px;
+
+    scroll-snap-align: start;
+  }
 `;
 
 const Title = styled.h1`

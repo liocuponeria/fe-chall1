@@ -18,6 +18,10 @@ const Container = styled.ul`
     & + li {
       margin-left: 24px;
     }
+
+    @media (max-width: 568px) {
+      scroll-snap-align: start;
+    }
   }
 
   @media (max-width: 568px) {
@@ -25,6 +29,8 @@ const Container = styled.ul`
     max-width: 600px;
 
     overflow-x: auto;
+
+    scroll-snap-type: x mandatory;
 
     align-items: flex-start;
     justify-content: start;
