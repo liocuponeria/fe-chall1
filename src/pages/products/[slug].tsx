@@ -1,7 +1,11 @@
 import React from 'react';
-import { GetServerSideProps } from 'next';
-import styled from 'styled-components';
+//? Components
 import DetailsCard from '../../components/Details/DetailsCard';
+//? styled-components
+import styled from 'styled-components';
+//? Functionalities from Next.js
+import Head from 'next/head';
+import { GetServerSideProps } from 'next';
 
 const Container = styled.div`
   width: 100%;
@@ -38,20 +42,35 @@ interface IProductDetail {
 
 export default function ProductDetail({ product }: IProductDetail) {
   return (
-    <Container>
-      <Wrapper>
-        <Title>Details</Title>
-        {product && (
-          <DetailsCard
-            key={product.id}
-            image={product.image}
-            title={product.title}
-            price={product.price}
-            description={product.description}
-          />
-        )}
-      </Wrapper>
-    </Container>
+    <>
+      <Head>
+        <title>Cuponeria Store | {product.title} </title>
+        <meta
+          property="og:title"
+          content={`Cuponeria Store | ${product.title}`}
+        />
+        <meta name="robots" content="index, follow" />
+        <meta name="description" content={product.description} />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="theme-color" content="#000" />
+      </Head>
+
+      <Container>
+        <Wrapper>
+          <Title>Details</Title>
+          {product && (
+            <DetailsCard
+              key={product.id}
+              image={product.image}
+              title={product.title}
+              price={product.price}
+              description={product.description}
+            />
+          )}
+        </Wrapper>
+      </Container>
+    </>
   );
 }
 
