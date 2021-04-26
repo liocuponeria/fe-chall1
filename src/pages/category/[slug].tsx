@@ -1,7 +1,5 @@
 import { GetServerSideProps } from 'next';
-import styled from 'styled-components';
 import FeaturedCardList from '../../components/Home/Featured/FeaturedCardList';
-import { api } from '../../services/api';
 
 type IProduct = {
   id: string;
@@ -27,9 +25,10 @@ export default function Category({ products }: ICategory) {
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   const { slug } = params;
 
-  const response = await api.get(`products/category/${slug}`);
-
-  const data = response.data;
+  let response = await fetch(
+    `https://fakestoreapi.com/products/category/${slug}`
+  );
+  let data = await response.json();
 
   const products = data.map((product) => {
     return {

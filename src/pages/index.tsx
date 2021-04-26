@@ -1,6 +1,5 @@
 import { GetStaticProps } from 'next';
 import Featured from '../components/Home/Featured';
-import { api } from '../services/api';
 import Discover from './../components/Home/Discover/index';
 
 type IProduct = {
@@ -27,8 +26,8 @@ export default function Home({ allProducts, discoverProducts }: IHome) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const response = await api.get('products');
-  const data = response.data;
+  let response = await fetch(`https://fakestoreapi.com/products`);
+  let data = await response.json();
 
   const products = data.map((product) => {
     return {

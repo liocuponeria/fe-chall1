@@ -20,7 +20,10 @@ const Box = styled.div`
 export default function Logo() {
   return (
     <Box>
-      <img src="./Logo.png" alt="Cuponeria" />
+      <img
+        src="https://images.prismic.io/portfolio-nextjs/518cfd35-9cbe-4561-9c75-bd10d005bb3e_Logo.png?auto=compress,format"
+        alt="Cuponeria"
+      />
       <h1>Cuponeria Store</h1>
     </Box>
   );

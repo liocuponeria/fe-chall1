@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -94,10 +95,12 @@ export default function FeaturedCard({
   id,
 }: IFeaturedCard) {
   return (
-    <Container>
-      <img src={image} alt={title} />
-      <Title>{title}</Title>
-      <Price>{price}</Price>
-    </Container>
+    <Link href={`/products/${id}`}>
+      <Container>
+        <img src={image} alt={title} />
+        <Title>{title}</Title>
+        <Price>{price}</Price>
+      </Container>
+    </Link>
   );
 }
