@@ -1,6 +1,7 @@
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import LoadingFeaturedCard from '../../Shimmer/LoadingComponents/LoadingFeaturedCard';
 
 const Container = styled.div`
   width: 227px;
@@ -94,6 +95,18 @@ export default function FeaturedCard({
   price,
   id,
 }: IFeaturedCard) {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+  }, []);
+
+  if (isLoading) {
+    return <LoadingFeaturedCard />;
+  }
+
   return (
     <Link href={`/products/${id}`}>
       <Container>

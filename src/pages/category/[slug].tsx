@@ -1,5 +1,6 @@
 import { GetServerSideProps } from 'next';
 import FeaturedCardList from '../../components/Home/Featured/FeaturedCardList';
+import styled from 'styled-components';
 
 type IProduct = {
   id: string;
@@ -14,11 +15,18 @@ interface ICategory {
   products: Array<IProduct>;
 }
 
+const Container = styled.div`
+  width: 100%;
+  height: 100%;
+
+  padding: 0 1rem;
+`;
+
 export default function Category({ products }: ICategory) {
   return (
-    <>
+    <Container>
       <FeaturedCardList allProducts={products} />
-    </>
+    </Container>
   );
 }
 
