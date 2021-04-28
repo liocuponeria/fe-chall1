@@ -1,38 +1,40 @@
-# Frontend Developer Test 1 - Cuponeria
+# Cuponeria Store
 
-This test aims to test the candidate's knowledge regarding the technologies used by the **Cuponeria Frontend Developer Team**.
+## About the project
 
-## Layout
+Project developed from a test for the Front-end position at the Cuponeria company. And here are some of the requirements that I met:
 
-- [Layout](https://www.figma.com/file/CjWJWkhU0eYmwVlUaPs4A0/nike-website-denion?node-id=0%3A1)
+- NextJS as my framework.
+- The home page is a Static Page.
+- The details page is a Server Side Rendered Page.
+- The categories page is a Server Side Rendered Page.
+- I used Styled Components to style my components.
+- I used TypeScript.
 
-## Instructions
+## Preview project
 
-Clone this repository.
-Create a new branch with your name.
-Checkout to the branch of your name.
-Commit your workflow, you can check this [article](https://medium.com/@rafael.oliveira/como-escrever-boas-mensagens-de-commit-9f8fe852155a).
-After you're done, push to the origin and send a pull request of the branch with your name.
+You can see the result by [clicking here](https://cuponeria-nextjs.vercel.app/).
 
-## Skills Required
+## Technology
 
-- You have to use [React Js](https://pt-br.reactjs.org/) as your framework.
-- The Product Cards, Featured Cards and Menu Itens must be Reusable Components.
-- You have to use Grid Layout for the structure of the pages.
-- You have to use Flexbox for the Components.
-- All content needs to be consumed through the [Fake Store API](https://fakestoreapi.com/).
-- If the fake store API is out, you can consume [alternative API](https://gist.github.com/FranciscoBBC/7d1d5e370ba397f73c981dc27cd71c3d)
-- The app must be responsive for Web and Mobile but have to look good on all breakpoints like mobile, tablets, laptops, desktops widescreen and desktops ultrawidescreen.
-- Can we see your UI/UX skills? Surprise us with your best, you can change the layout theme schema the way you want, and please, add microinterations but without using external libs.
-- Don't repeat yourself. Elements that are logically related must be changed predictably and uniformly and must be sync.
+Project developed with:
 
-## Not required (will earn more points)
+- [ReactJS](https://reactjs.org/)
+- [Typescript](https://www.typescriptlang.org/)
+- [Next.js](https://nextjs.org/)
+- [styled-components](https://styled-components.com/)
+- [react-icons](https://react-icons.github.io/react-icons/)
 
-- Use [Next Js](https://nextjs.org/) as your framework.
-- The home page must be a Static Page.
-- The details page must be a Server Side Rendered Page.
-- Use [Styled Components](https://styled-components.com/) to style your components.
-- Use context api to set a color scheme theme on your app.
-- Use Typescript
+## To run
 
-## GLHF (Good Luck and Have Fun!)
+#### Enter the directory
+
+`cd fe-chall1`
+
+#### Download the dependencies
+
+`yarn install`
+
+#### Run
+
+Run `yarn dev` and access the application via http://localhost:3000
