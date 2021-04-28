@@ -4,12 +4,16 @@
 
 Project developed from a test for the Front-end position at the Cuponeria company. And here are some of the requirements that I met:
 
-- NextJS as my framework
+- NextJS as my framework.
 - The home page is a Static Page.
 - The details page is a Server Side Rendered Page.
 - The categories page is a Server Side Rendered Page.
 - I used Styled Components to style my components.
 - I used TypeScript.
+
+## Preview project
+
+You can see the result by [clicking here](https://cuponeria-nextjs.vercel.app/).
 
 ## Technology
 
