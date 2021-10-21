@@ -30,6 +30,7 @@ export const Radio = styled.div`
       font-family: "Roboto", sans-serif;
       font-weight: 700;
       font-size: 1rem;
+      color: #111;
 
       text-transform: uppercase;
     }
