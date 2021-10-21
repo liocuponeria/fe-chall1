@@ -2,18 +2,22 @@ import { useContext } from "react";
 import axios from "axios";
 import styled from "styled-components";
 import { CategoriesListContext } from "../context/categoriesContext";
+import { ProductListContext } from "../context/productsContext";
 import { Header } from "../components/Header";
 import { ProductCard } from "../components/ProductCard";
 import type { NextPage } from "next";
 
 interface IHomeProps {
   categories?: string[];
+  products?: [];
 }
 
-const Home: NextPage | any = ({ categories }: IHomeProps) => {
+const Home: NextPage | any = ({ categories, products }: IHomeProps) => {
   const { setCategoriesList } = useContext(CategoriesListContext);
+  const { productsList, setProductsList } = useContext(ProductListContext);
 
   setCategoriesList(categories);
+  setProductsList(products);
 
   return (
     <>
@@ -21,8 +25,11 @@ const Home: NextPage | any = ({ categories }: IHomeProps) => {
       <Content>
         <h1>DISCOVER</h1>
         <ProductsContainer>
-          <ProductCard />
-          <ProductCard />
+          {productsList
+            .filter((_, index) => index <= 1)
+            .map((item) => (
+              <ProductCard data={item} />
+            ))}
         </ProductsContainer>
       </Content>
     </>
@@ -32,18 +39,26 @@ const Home: NextPage | any = ({ categories }: IHomeProps) => {
 //Método do próprio NextJs, serve para armazenar os dados enquanto está sendo gerado o build da aplicação,
 //fazendo com que ja tenha os dados da API antes mesmo da página ser renderizada para o User.
 Home.getInitialProps = async () => {
-  let categories = null; //this line
+  let categories = null;
+  let products = null;
 
   try {
-    const response = await axios.get(
+    //Puxando as categorias disponiveis na API:
+    const categoriesResponse = await axios.get(
       `https://fakestoreapi.com/products/categories`
     );
-    categories = response.data;
+    categories = categoriesResponse.data;
+
+    //Puxando as categorias disponiveis na API:
+    const productsResponse = await axios.get(
+      `https://fakestoreapi.com/products`
+    );
+    products = productsResponse.data;
   } catch (err) {
     console.error(err);
   }
 
-  return { categories: categories };
+  return { categories: categories, products: products };
 };
 
 const Content = styled.div`
