@@ -1,8 +1,9 @@
 import type { NextPage } from "next";
 import LogoImg from "../../assets/logo.png";
+import { CategoriesList } from "../CategoriesList";
 import { Container, StaticContent, Logo, Title } from "./style";
 
-export const Header: NextPage = () => {
+export const Header = () => {
   return (
     <>
       <Container>
@@ -13,7 +14,7 @@ export const Header: NextPage = () => {
           </Title>
         </StaticContent>
 
-        
+        <CategoriesList />
       </Container>
     </>
   );
