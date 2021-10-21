@@ -86,10 +86,18 @@ const ProductsContainer = styled.div`
 
   div:first-child {
     grid-area: 1 / 1 / 3 / 3;
+
+    @media (max-width: 1200px) {
+      grid-area: 1 / 1 / 3 / 6
+    }
   }
 
   div:last-child {
     grid-area: 1 / 4 / 3 / 6;
+
+    @media (max-width: 1200px) {
+      grid-area: 3 / 1 / 5 / 6;
+    }
   }
 `;
 
