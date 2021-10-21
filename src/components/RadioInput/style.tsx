@@ -1,10 +1,53 @@
 import styled from "styled-components";
 
 export const Radio = styled.div`
-  border: 1px solid #ccc;
+  width: 18.4%;
+  height: 50px;
+
+  border: none;
+
   box-sizing: border-box;
-  float: left;
-  height: 70px;
+
   position: relative;
-  width: 120px;
+
+  float: left;
+
+  label {
+    border-radius: 10px;
+    background: #fff no-repeat center center;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    white-space: nowrap;
+
+    span {
+      z-index: 1;
+
+      font-family: "Roboto", sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+
+      text-transform: uppercase;
+    }
+
+    input[type="radio"] {
+      all: unset;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      border-radius: 10px;
+      transition: background 0.3s ease-in-out;
+    }
+
+    input[type="radio"]:checked {
+      background: #FAD424;
+      border-radius: 10px;
+    }
+  }
 `;
