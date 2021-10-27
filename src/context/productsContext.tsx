@@ -9,13 +9,17 @@ interface IProductsList {
   setProductsList: any;
   filtredProductsList: string[];
   setFiltredProductsList: any;
+  selectedProductId: number;
+  setSelectedProductId: any;
 }
 
 export const ProductListContext = createContext({} as IProductsList);
 
 export function ProductListProvider({ children }: IProductsProps) {
   const [productsList, setProductsList] = useState<string[]>([]);
-  const [filtredProductsList, setFiltredProductsList] = useState<string[]>(productsList);
+  const [filtredProductsList, setFiltredProductsList] =
+    useState<string[]>(productsList);
+  const [selectedProductId, setSelectedProductId] = useState<number>(0);
 
   return (
     <ProductListContext.Provider
@@ -24,6 +28,8 @@ export function ProductListProvider({ children }: IProductsProps) {
         setProductsList,
         filtredProductsList,
         setFiltredProductsList,
+        selectedProductId,
+        setSelectedProductId
       }}
     >
       {children}

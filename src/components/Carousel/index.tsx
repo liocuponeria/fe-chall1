@@ -9,7 +9,6 @@ export const Carousel = ({ children }: any) => {
 
   const props = {
     dots: true,
-    focusOnSelect: true,
     speed: 500,
     infinite: false,
     slidesToShow: filtredProductsList.length < 5 ? 4 : 5,

@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { useContext, useMemo } from "react";
 import axios from "axios";
 import styled from "styled-components";
@@ -10,6 +11,7 @@ import { ProductCard } from "../components/ProductCard";
 import { FeatureCard } from "../components/FeatureCard";
 import { Carousel } from "../components/Carousel";
 import type { NextPage } from "next";
+import Link from "next/link";
 
 interface IHomeProps {
   categories?: string[];
@@ -42,6 +44,9 @@ const Home: NextPage | any = ({ categories, products }: IHomeProps) => {
 
   return (
     <>
+      <Head>
+        <title>Home | Cuponeria Store</title>
+      </Head>
       <Header />
       <Content>
         <h1>DISCOVER</h1>

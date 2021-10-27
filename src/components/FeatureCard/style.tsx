@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Link from "next/link"
 
 export const Container = styled.div`
   width: 80%;
@@ -12,9 +13,11 @@ export const Container = styled.div`
   box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.2);
 
   border-radius: 10px;
+
+  cursor: pointer;
 `;
 
-export const Button = styled.button`
+export const Button = styled(Link)`
   width: 100%;
 
   cursor: pointer;
@@ -41,6 +44,8 @@ export const Footer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  cursor: default;
 
   span {
     font-family: "Roboto", sans-serif;
