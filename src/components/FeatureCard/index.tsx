@@ -1,23 +1,25 @@
-import { Container, Button, Footer } from "./style";
-import Slider from "react-slick";
+import { Container, Button, Price, Footer } from "./style";
 import Image from "next/image";
 
 interface IFeatureCardProps {
   data: {
     title: string;
     image: string;
-    category: string;
+    price: string;
   };
 }
 
 export const FeatureCard: any = ({ data }: IFeatureCardProps) => {
-  const { title, image } = data;
+  const { title, image, price } = data;
+
+  const formatPrice = price.toString().replace(".", ",");
 
   return (
     <>
       <Container>
         <Button>
           <Image width={250} height={400} src={image} />
+          <Price>R$ {formatPrice}</Price>
         </Button>
 
         <Footer>

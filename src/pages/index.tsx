@@ -1,7 +1,6 @@
 import { useContext, useMemo } from "react";
 import axios from "axios";
 import styled from "styled-components";
-import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { CategoriesListContext } from "../context/categoriesContext";
@@ -9,6 +8,7 @@ import { ProductListContext } from "../context/productsContext";
 import { Header } from "../components/Header";
 import { ProductCard } from "../components/ProductCard";
 import { FeatureCard } from "../components/FeatureCard";
+import { Carousel } from "../components/Carousel";
 import type { NextPage } from "next";
 
 interface IHomeProps {
@@ -40,39 +40,6 @@ const Home: NextPage | any = ({ categories, products }: IHomeProps) => {
 
   setFiltredProductsList(filterTest);
 
-  const slideSettings = {
-    dots: true,
-    speed: 500,
-    slidesToShow: 5,
-    slidesToScroll: 5,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
-
   return (
     <>
       <Header />
@@ -88,13 +55,13 @@ const Home: NextPage | any = ({ categories, products }: IHomeProps) => {
 
         <h1>FEATURED</h1>
         <FeatureContainer>
-          <Slider {...slideSettings}>
+          <Carousel>
             {filtredProductsList.length > 0
               ? filtredProductsList.map((item: any) => (
                   <FeatureCard data={item} />
                 ))
               : productsList.map((item: any) => <FeatureCard data={item} />)}
-          </Slider>
+          </Carousel>
         </FeatureContainer>
       </Content>
     </>

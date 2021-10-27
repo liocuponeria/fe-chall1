@@ -2,8 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 80%;
-  height: 50%;
-  
+  margin: 30px 0 30px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,6 +22,8 @@ export const Button = styled.button`
   background: none;
   border: none;
 
+  position: relative;
+
   img {
     object-fit: contain;
   }
@@ -30,8 +31,7 @@ export const Button = styled.button`
 
 export const Footer = styled.div`
   width: 100%;
-  min-height: 65px;
-  max-height: fit-content;
+  height: 65px;
 
   background: #111;
 
@@ -49,5 +49,35 @@ export const Footer = styled.div`
     color: #fff;
     line-height: 19px;
     text-align: center;
+
+    max-width: 90%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
+`;
+
+export const Price = styled.span`
+  position: absolute;
+
+  bottom: 30px;
+  right: 20px;
+
+  width: 85px;
+  height: 36px;
+
+  background: red;
+
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1rem;
+  line-height: 19px;
+  color: #fff;
 `;
