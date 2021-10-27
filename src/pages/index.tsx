@@ -1,10 +1,9 @@
-import { useContext } from "react";
+import { useContext, useMemo } from "react";
 import axios from "axios";
 import styled from "styled-components";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Image from "next/image";
 import { CategoriesListContext } from "../context/categoriesContext";
 import { ProductListContext } from "../context/productsContext";
 import { Header } from "../components/Header";
@@ -18,11 +17,28 @@ interface IHomeProps {
 }
 
 const Home: NextPage | any = ({ categories, products }: IHomeProps) => {
-  const { setCategoriesList } = useContext(CategoriesListContext);
-  const { productsList, setProductsList } = useContext(ProductListContext);
+  const { setCategoriesList, category } = useContext(CategoriesListContext);
+  const {
+    productsList,
+    setProductsList,
+    filtredProductsList,
+    setFiltredProductsList,
+  } = useContext(ProductListContext);
 
   setCategoriesList(categories);
   setProductsList(products);
+
+  const filterTest = useMemo(() => {
+    function searchByCategory(product: any) {
+      if (product.category === category) return product;
+    }
+
+    let filteredProducts;
+
+    return (filteredProducts = productsList.filter(searchByCategory));
+  }, [category]);
+
+  setFiltredProductsList(filterTest);
 
   const slideSettings = {
     dots: true,
@@ -73,9 +89,11 @@ const Home: NextPage | any = ({ categories, products }: IHomeProps) => {
         <h1>FEATURED</h1>
         <FeatureContainer>
           <Slider {...slideSettings}>
-            {productsList.map((item: any) => (
-              <FeatureCard data={item} />
-            ))}
+            {filtredProductsList.length > 0
+              ? filtredProductsList.map((item: any) => (
+                  <FeatureCard data={item} />
+                ))
+              : productsList.map((item: any) => <FeatureCard data={item} />)}
           </Slider>
         </FeatureContainer>
       </Content>

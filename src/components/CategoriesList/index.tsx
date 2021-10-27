@@ -4,7 +4,7 @@ import { RadioInput } from "../RadioInput";
 import { Container } from "./style";
 
 export const CategoriesList = () => {
-  const { categoriesList } = useContext(CategoriesListContext);
+  const { categoriesList, setCategory } = useContext(CategoriesListContext);
 
   return (
     <>
@@ -15,7 +15,7 @@ export const CategoriesList = () => {
               key={item}
               radioName="categorias"
               radioValue={item}
-              onChange={() => console.log(item)}
+              onChange={() => setCategory(item)}
             />
           );
         })}

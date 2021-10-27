@@ -6,6 +6,7 @@ interface IFeatureCardProps {
   data: {
     title: string;
     image: string;
+    category: string;
   };
 }
 
