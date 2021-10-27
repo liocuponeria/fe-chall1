@@ -90,15 +90,36 @@ export const Content = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-around;
+
+  @media (max-width: 769px) {
+    flex-direction: column;
+  }
 `;
 
 export const Infos = styled.div`
   width: 45%;
 
+  @media (max-width: 769px) {
+    width: 90%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
   div {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+
+    @media (max-width: 769px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 30px auto 0 auto;
+    }
 
     h2 {
       width: 50%;
@@ -107,6 +128,11 @@ export const Infos = styled.div`
       font-size: 1.6rem;
       color: #111;
       margin-top: 0;
+
+      @media (max-width: 769px) {
+        width: 80%;
+        text-align: center;
+      }
     }
 
     button {
@@ -127,6 +153,10 @@ export const Infos = styled.div`
       font-size: 1.4rem;
       line-height: 18.75px;
       color: #fff;
+
+      @media (max-width: 769px) {
+        width: 80%;
+      }
     }
   }
 
@@ -139,6 +169,10 @@ export const Infos = styled.div`
     line-height: 17px;
     text-align: left;
     color: #a8a4a4;
+
+    @media (max-width: 769px) {
+      text-align: center;
+    }
   }
 `;
 

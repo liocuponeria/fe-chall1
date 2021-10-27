@@ -1,4 +1,5 @@
-import { Container, Content, ContentHeader } from "./style";
+import Link from "next/link";
+import { Container, Content, ContentHeader, Button } from "./style";
 import Image from "next/image";
 
 interface IProductCardProps {
@@ -17,7 +18,7 @@ interface IProductCardProps {
 }
 
 export const ProductCard: any = ({ data }: IProductCardProps) => {
-  const { title, description, image } = data;
+  const { id, title, description, image } = data;
 
   return (
     <>
@@ -27,7 +28,14 @@ export const ProductCard: any = ({ data }: IProductCardProps) => {
         <Content>
           <ContentHeader>
             <h1>{title}</h1>
-            <button>SHOP</button>
+            <Link
+              href={{
+                pathname: "/detail",
+                query: { productid: id },
+              }}
+            >
+              <Button>SHOP</Button>
+            </Link>
           </ContentHeader>
           <p>{description}</p>
         </Content>

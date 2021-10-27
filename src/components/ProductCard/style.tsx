@@ -71,28 +71,31 @@ export const ContentHeader = styled.div`
       text-align: center;
     }
   }
+`;
 
-  button {
-    width: 30%;
+export const Button = styled.button`
+  width: 30%;
 
-    padding: 2vh 0;
+  padding: 2vh 0;
 
-    border: none;
-    border-radius: 10px;
+  border: none;
+  border-radius: 10px;
 
-    background: #619ceb;
+  background: #619ceb;
 
-    cursor: pointer;
+  cursor: pointer;
 
-    font-family: "Roboto", sans-serif;
-    font-weight: 700;
-    font-size: 1rem;
-    line-height: 18.75px;
-    color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 18.75px;
+  color: #fff;
 
-    @media (max-width: 1200px) {
-      width: 100%;
-      margin-top: 10px;
-    }
+  @media (max-width: 1200px) {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  a {
   }
 `;
