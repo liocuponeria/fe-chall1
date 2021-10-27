@@ -1,5 +1,17 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import Image from "next/image";
+
+const scaleOnInit = keyframes`
+  0% {
+    transform: translate(-300px);
+    opacity: 0;
+  },
+
+  100% {
+    transform: translate(0);
+    opacity: 1;
+  }
+`;
 
 export const Container = styled.header`
   width: 100vw;
@@ -11,6 +23,8 @@ export const Container = styled.header`
   align-items: center;
 
   background: #111;
+
+  animation: ${scaleOnInit} 0.4s linear alternate;
 `;
 
 export const StaticContent = styled.div`

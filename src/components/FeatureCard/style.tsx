@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Link from "next/link"
+import Link from "next/link";
 
 export const Container = styled.div`
   width: 80%;
@@ -15,6 +15,12 @@ export const Container = styled.div`
   border-radius: 10px;
 
   cursor: pointer;
+
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1, 1.1);
+  }
 `;
 
 export const Button = styled(Link)`
@@ -63,13 +69,12 @@ export const Footer = styled.div`
 `;
 
 export const Price = styled.span`
-  position: absolute;
-
-  bottom: 30px;
-  right: 20px;
-
   width: 85px;
   height: 36px;
+
+  margin-left: auto;
+  margin-right: 30px;
+  margin-bottom: 30px;
 
   background: red;
 

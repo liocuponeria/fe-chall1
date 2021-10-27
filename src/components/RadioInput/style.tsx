@@ -12,6 +12,12 @@ export const Radio = styled.div`
 
   float: left;
 
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1, 1.1);
+  }
+
   label {
     border-radius: 10px;
     background: #fff no-repeat center center;
@@ -47,7 +53,7 @@ export const Radio = styled.div`
     }
 
     input[type="radio"]:checked {
-      background: #FAD424;
+      background: #fad424;
       border-radius: 10px;
     }
   }

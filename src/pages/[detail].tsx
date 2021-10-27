@@ -1,12 +1,13 @@
 import Head from "next/head";
 import Image from "next/image";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import axios from "axios";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import type { NextPage } from "next";
 
 import { Header } from "../components/Header";
+import { Footer } from "../components/Footer";
 
 interface IDetailProps {
   product: { title: string; price: number; description: string; image: string };
@@ -22,7 +23,7 @@ const Detail: NextPage | any = ({ product }: IDetailProps) => {
       <Head>
         <title>Product | Detail</title>
       </Head>
-      <Header />
+      <Header pageName="detail" />
       <Container>
         <h1>DETAILS</h1>
 
@@ -38,6 +39,7 @@ const Detail: NextPage | any = ({ product }: IDetailProps) => {
           </Infos>
         </Content>
       </Container>
+      <Footer />
     </>
   );
 };
@@ -60,6 +62,23 @@ Detail.getInitialProps = async ({ query: productid }: any) => {
   return { product: product };
 };
 
+const scaleOnInit = keyframes`
+  0% {
+    transform: scale(0, 0);
+    opacity: 0;
+  },
+
+  50% {
+    transform: scale(1.3, 1.3);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+`;
+
 const Container = styled.div`
   width: 89%;
 
@@ -69,6 +88,10 @@ const Container = styled.div`
 
   margin: 0 auto;
   padding: 0;
+
+  margin-bottom: 10%;
+
+  animation: ${scaleOnInit} 0.8s linear alternate;
 
   h1 {
     font-family: "Roboto", sans-serif;
@@ -154,8 +177,14 @@ export const Infos = styled.div`
       line-height: 18.75px;
       color: #fff;
 
+      transition: all 0.3s ease-in-out;
+
       @media (max-width: 769px) {
         width: 80%;
+      }
+
+      &:hover {
+        transform: scale(1.2, 1.2);
       }
     }
   }

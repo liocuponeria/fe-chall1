@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { useContext, useMemo } from "react";
 import axios from "axios";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { CategoriesListContext } from "../context/categoriesContext";
@@ -10,6 +10,7 @@ import { Header } from "../components/Header";
 import { ProductCard } from "../components/ProductCard";
 import { FeatureCard } from "../components/FeatureCard";
 import { Carousel } from "../components/Carousel";
+import { Footer } from "../components/FeatureCard/style";
 import type { NextPage } from "next";
 import Link from "next/link";
 
@@ -47,7 +48,7 @@ const Home: NextPage | any = ({ categories, products }: IHomeProps) => {
       <Head>
         <title>Home | Cuponeria Store</title>
       </Head>
-      <Header />
+      <Header pageName="home" />
       <Content>
         <h1>DISCOVER</h1>
         <ProductsContainer>
@@ -69,6 +70,7 @@ const Home: NextPage | any = ({ categories, products }: IHomeProps) => {
           </Carousel>
         </FeatureContainer>
       </Content>
+      <Footer />
     </>
   );
 };
@@ -98,6 +100,23 @@ Home.getInitialProps = async () => {
   return { categories: categories, products: products };
 };
 
+const scaleOnInit = keyframes`
+  0% {
+    transform: scale(0, 0);
+    opacity: 0;
+  },
+
+  50% {
+    transform: scale(1.3, 1.3);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+`;
+
 const Content = styled.div`
   width: 93%;
 
@@ -107,6 +126,8 @@ const Content = styled.div`
 
   margin: 0 auto;
   padding: 0;
+
+  margin-bottom: 10%;
 
   h1 {
     font-family: "Roboto", sans-serif;
@@ -140,10 +161,13 @@ const ProductsContainer = styled.div`
   }
 
   margin-bottom: -20%;
+
+  animation: ${scaleOnInit} 0.8s linear alternate;
 `;
 
 const FeatureContainer = styled.div`
   width: 100%;
+  animation: ${scaleOnInit} 1.4s linear alternate;
 `;
 
 export default Home;

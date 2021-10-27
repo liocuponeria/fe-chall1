@@ -1,6 +1,5 @@
 import { Container, Button, Price, Footer } from "./style";
 import Image from "next/image";
-import Link from "next/link";
 
 interface IFeatureCardProps {
   data: {
@@ -26,10 +25,10 @@ export const FeatureCard: any = ({ data }: IFeatureCardProps) => {
           }}
         >
           <a>
-            <Image width={250} height={400} src={image} />
-            <Price>R$ {formatPrice}</Price>
+            <Image width={200} height={380} src={image} />
           </a>
         </Button>
+        <Price>R$ {price}</Price>
 
         <Footer>
           <span>{title}</span>

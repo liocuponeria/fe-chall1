@@ -21,6 +21,12 @@ export const Container = styled.div`
     flex-direction: column;
     align-items: center;
   }
+
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1, 1.1);
+  }
 `;
 
 export const Content = styled.div`
@@ -96,6 +102,9 @@ export const Button = styled.button`
     margin-top: 10px;
   }
 
-  a {
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1, 1.1);
   }
 `;
