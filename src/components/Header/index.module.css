@@ -1,0 +1,48 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #000000;
+  z-index: 1000;
+  height: 230px;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.imagemCard {
+  position: sticky;
+  width: 64px;
+  height: 64px;
+  left: 80px;
+  border-radius: 80px;
+  background: url(../../../Assets/icone1.png);
+}
+.cardH1 {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  margin-top: 49px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #ffffff;
+}
+
+.cardH2 {
+  font-family: Roboto;
+  margin-left: auto;
+  margin-right: auto;
+  background: #ffffff;
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
+  height: 60px;
+  margin-top: 40px;
+  min-height: 0px;
+  min-width: 208px;
+  font-size: 18px;
+  width: 260px;
+}

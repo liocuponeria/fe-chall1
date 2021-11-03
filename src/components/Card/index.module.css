@@ -1,0 +1,91 @@
+.ul {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  list-style: none;
+  grid-gap: 20px;
+  width: 1860px;
+  margin-top: 300px;
+}
+
+.li {
+  display: flex;
+  flex-direction: column;
+  background: rgb(255, 255, 255);
+  border-radius: 10px;
+  padding: 20px;
+}
+.imagemproduto {
+  cursor: pointer;
+  align-self: center;
+  max-width: 170px;
+  height: 170px;
+}
+.strong {
+  font-family: "Roboto", sans-serif;
+  font-size: 10px;
+  line-height: 20px;
+  color: rgb(255, 255, 255);
+  margin-top: 5px;
+  align-self: end;
+  background-color: #ff0000;
+  border-radius: 10px;
+  padding: 4px;
+}
+.span {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 5px 0 20px;
+  color: aliceblue;
+}
+.button {
+  font-family: "Roboto", sans-serif;
+  margin-top: 10px;
+  background-color: #111111;
+  border-radius: 4px;
+  height: 40px;
+}
+
+.div {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+}
+.divHome {
+  display: flex;
+  gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  list-style: none;
+  padding: 12px;
+  background-color: rgb(243, 223, 234);
+  border-radius: 10px;
+}
+
+.imagemproduto1 {
+  padding: 15px;
+  max-width: 350px;
+  max-height: 230px;
+}
+.linkProduto {
+  cursor: pointer;
+}
+
+@media (max-width: 520px) {
+  .ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    list-style: none;
+    grid-gap: 20px;
+    width: 1500px;
+  }
+}
+
+@media (max-width: 380px) {
+  .ul {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    list-style: none;
+    grid-gap: 20px;
+    width: 1200px;
+  }
+}
